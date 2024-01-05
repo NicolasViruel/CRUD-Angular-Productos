@@ -1,0 +1,10 @@
+.centrar {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.derecha {
+    text-align: right;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
