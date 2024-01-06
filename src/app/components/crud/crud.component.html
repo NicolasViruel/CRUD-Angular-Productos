@@ -17,7 +17,7 @@
                 </div>
                 <div class="modal-body">
                     <input type="hidden" name="id" >
-                  <form [formGroup]="formulario" (ngSubmit)="guardar()">
+                  <form [formGroup]="formulario" (ngSubmit)="guardar()" >
                     <div class="mb-3">
                       <label for="recipient-name" class="col-form-label">Nombre:</label>
                       <input type="text" class="form-control" formControlName="nombre">
@@ -31,14 +31,14 @@
                     <div class="mb-3">
                       <label for="message-text" class="col-form-label">Descripcion:</label>
                       <textarea class="form-control" formControlName="descripcion"></textarea>
-                      <p class="text-danger mx-2" *ngIf="showError">{{mensajeError}}</p>
                       <p class="text-danger" *ngIf="formulario.get('descripcion')?.invalid && formulario.get('descripcion')?.touched">Agregue una descripcion</p>
+                      <p class="text-danger mx-2" *ngIf="true">{{mensajeError}}</p>
                     </div>
-
+                    
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Guardar</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                      </div>
+                      <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Guardar</button>
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
                   </form>
                   
                   

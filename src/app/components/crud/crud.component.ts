@@ -43,22 +43,21 @@ export class CrudComponent implements OnInit {
       cantidad: this.formulario.get('cantidad')?.value,
       descripcion: this.formulario.get('descripcion')?.value,
     }
-
     this.productoServices.guardarProducto(this.producto)
     .subscribe((respuesta: any) => {
       // console.log('Respuesta: ', respuesta);
       this.mostrar();
+      this.showError = false;
       Swal.fire({
         text: 'Guardado con exito',
         icon: 'success',
         confirmButtonText: 'Aceptar'
       })
-      this.showError = false;
     },
     (error: any) => {
-      this.mostrarError();
       this.showError = true;
       this.mensajeError = 'Debe completar todos los campos';
+      this.mostrarError();
     }
     );
     this.resetform();
